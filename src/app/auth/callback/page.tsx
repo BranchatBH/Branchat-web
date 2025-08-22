@@ -10,7 +10,11 @@ export default function Callback() {
       state: p.get("state"),
       error: p.get("error"),
     };
-    window.postMessage(msg, "*");
+    if(window.opener){
+      window.opener.postMessage(msg, "https://branchat.netlify.app");
+    }
+
+    window.close?.();
   }, []);
 
   return <div>callback</div>;
