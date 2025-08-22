@@ -11,7 +11,7 @@ export default function Callback() {
       error: p.get("error"),
     };
     if(window.opener){
-      window.opener.postMessage(msg, "https://branchat.netlify.app");
+      window.opener.postMessage(msg, "*");
     }
 
     window.close?.();
